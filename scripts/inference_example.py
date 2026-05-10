@@ -1,11 +1,11 @@
-from __future__ import annotations
-
 """
 Minimal inference example (for README / recruiters).
 
 Usage:
   python scripts/inference_example.py --model-dir runs/altered_vision_transformer --image path/to/image.jpg
 """
+
+from __future__ import annotations
 
 import argparse
 
