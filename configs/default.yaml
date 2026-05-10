@@ -1,0 +1,43 @@
+dataset:
+  # Expected Kaggle layout (not included in repo):
+  # dataset/train/train.csv
+  # dataset/train/images/*.jpg
+  # dataset/test/images/*.jpg
+  root: "dataset"
+  train_csv: "train/train.csv"
+  train_images_dir: "train/images"
+  test_images_dir: "test/images"
+  image_column_in_csv: "image"
+  category_column_in_csv: "category"
+  label_map:
+    1: "Cargo"
+    2: "Military"
+    3: "Carrier"
+    4: "Cruise"
+    5: "Tankers"
+
+model:
+  # You can also point this to a local directory containing a previously saved model.
+  pretrained: "google/vit-base-patch16-224-in21k"
+
+train:
+  output_dir: "runs/altered_vision_transformer"
+  seed: 42
+  num_train_epochs: 5
+  learning_rate: 1.0e-4
+  weight_decay: 0.01
+  warmup_steps: 10
+  per_device_train_batch_size: 4
+  per_device_eval_batch_size: 8
+  gradient_accumulation_steps: 4
+  fp16: true
+  evaluation_strategy: "epoch"
+  save_strategy: "epoch"
+  save_total_limit: 2
+  load_best_model_at_end: true
+  metric_for_best_model: "accuracy"
+  logging_dir: "logs"
+  report_to: "tensorboard"
+
+inference:
+  top_k: 3

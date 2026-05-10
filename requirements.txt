@@ -1,0 +1,5 @@
+# Install the project (and its pinned dependencies) in editable mode:
+-e .
+
+# Extra utilities used by the original notebook / common ML workflows
+imbalanced-learn>=0.12

@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Packaging
+*.egg-info/
+dist/
+build/
+
+# Logs / runs / artifacts
+logs/
+runs/
+checkpoints/
+mlruns/
+*.log
+
+# Model checkpoints
+**/checkpoint-*/
+**/*.ckpt
+**/*.pt
+**/*.pth
+**/*.bin
+*.onnx
+
+# Data (not committed)
+data/
+dataset/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local config overrides
+*.local.yaml
+*.local.yml
+
+# Secrets
+.env

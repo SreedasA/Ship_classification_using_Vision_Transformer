@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it."
+title: "Ship Classification using Vision Transformer"
+type: software
+authors:
+  - family-names: "Anjankudy"
+    given-names: "Sreedas"
+email: "asreedas@gmail.com"
+url: "https://github.com/SreedasA"
+license: "MIT"
+repository-code: "https://github.com/SreedasA"
+keywords:
+  - "vision transformer"
+  - "image classification"
+  - "maritime"
+  - "pytorch"
+  - "huggingface"
