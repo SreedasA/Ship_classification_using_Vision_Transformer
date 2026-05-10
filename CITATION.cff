@@ -1,17 +1,33 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it."
+message: "If you use this software, please cite the associated paper."
 title: "Ship Classification using Vision Transformer"
 type: software
 authors:
   - family-names: "Anjankudy"
     given-names: "Sreedas"
 email: "asreedas@gmail.com"
-url: "https://github.com/SreedasA"
+url: "https://github.com/SreedasA/Ship_classification_using_Vision_Transformer"
 license: "MIT"
-repository-code: "https://github.com/SreedasA"
+repository-code: "https://github.com/SreedasA/Ship_classification_using_Vision_Transformer"
 keywords:
   - "vision transformer"
   - "image classification"
   - "maritime"
   - "pytorch"
   - "huggingface"
+
+preferred-citation:
+  type: conference-paper
+  title: "Deep Learning for Image Recognition and Classification: A Comparative Study on Optical and ISAR Datasets for Maritime and Automotive Applications"
+  authors:
+    - family-names: "Anjankudy"
+      given-names: "Sreedas"
+    - family-names: "Upparapalli"
+      given-names: "Raghavendra"
+    - family-names: "Srivastava"
+      given-names: "Smita"
+  doi: "10.1109/ICKECS65700.2025.11035465"
+  year: 2025
+  conference:
+    name: "2025 International Conference on Knowledge Engineering and Communication Systems (ICKECS)"
+  url: "https://ieeexplore.ieee.org/abstract/document/11035465"
