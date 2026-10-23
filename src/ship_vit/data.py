@@ -28,30 +28,9 @@ def build_train_dataframe(cfg: dict[str, Any]) -> pd.DataFrame:
     out = pd.DataFrame(
         {
             "image": (train_images_dir / df[image_col].astype(str)).astype(str),
-            "label": df[category_col].map(label_map).astype(str),
+            "label": df[category_col].map(label_map),
         }
     )
 
     missing = out["label"].isna().sum()
     if missing:
-        raise ValueError(
-            f"{missing} rows have unmapped labels. Check 'label_map' in config."
-        )
-    return out
-
-
-def make_hf_dataset(df: pd.DataFrame) -> tuple[Dataset, ClassLabel]:
-    labels_list = sorted(df["label"].unique().tolist())
-    class_labels = ClassLabel(num_classes=len(labels_list), names=labels_list)
-
-    ds = Dataset.from_pandas(df)
-    ds = ds.cast_column("image", Image())
-
-    def _map_label2id(example: dict[str, Any]) -> dict[str, Any]:
-        example["label"] = class_labels.str2int(example["label"])
-        return example
-
-    ds = ds.map(_map_label2id)
-    ds = ds.cast_column("label", class_labels)
-    return ds, class_labels
-
